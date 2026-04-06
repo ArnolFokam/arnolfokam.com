@@ -112,25 +112,25 @@ export default function Home() {
       {/* Text — full on mobile, left half on desktop */}
       <div className="absolute inset-0 z-10 flex flex-col justify-center overflow-y-auto px-8 pt-28 pb-12 lg:inset-y-0 lg:left-0 lg:w-1/2 lg:overflow-visible lg:px-20 lg:pb-0 lg:pt-0">
         <p
-          className="text-base font-semibold uppercase tracking-widest text-zinc-400 lg:text-2xl"
+          className="text-base font-semibold uppercase tracking-widest text-zinc-400 lg:text-xl"
           style={anim("fadeInUp", 150)}
         >
           Hello, I&apos;m
         </p>
         <h1
           className="mt-3 font-bold leading-[1.05] text-white"
-          style={{ ...anim("fadeInUp", 300), fontSize: "clamp(3rem, 10vw, 8.5rem)" }}
+          style={{ ...anim("fadeInUp", 300), fontSize: "clamp(3rem, 10vw, 7rem)" }}
         >
           Arnol Fokam
         </h1>
         <p
-          className="mt-5 text-xl font-semibold text-zinc-300 lg:text-3xl"
+          className="mt-5 text-xl font-semibold text-zinc-300 lg:text-2xl"
           style={anim("fadeInUp", 450)}
         >
           AI Builder in London 🇬🇧💂
         </p>
         <p
-          className="mt-6 text-base leading-8 text-zinc-400 lg:text-2xl lg:leading-10"
+          className="mt-6 text-base leading-8 text-zinc-400 lg:text-lg lg:leading-8"
           style={anim("fadeInUp", 600)}
         >
           I write code, train models, and ship things. I break systems on purpose to understand them, then rebuild them better. On a mission to bring a distinctly African identity into global tech, not just as users but as the people shaping it.
