@@ -5,37 +5,28 @@ import {
   faGithub,
   faGoogleScholar,
 } from "@fortawesome/free-brands-svg-icons";
-import { faNewspaper, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import me from "@/public/avatars/me.png";
 
-const socials = [
-  {
-    icon: faLinkedinIn,
-    href: "https://www.linkedin.com/in/arnolfokam/",
-    label: "LinkedIn",
-  },
-  {
-    icon: faGoogleScholar,
-    href: "https://scholar.google.com/citations?user=cA1hu0UAAAAJ&hl=en",
-    label: "Google Scholar",
-  },
-  {
-    icon: faGithub,
-    href: "https://github.com/ArnolFokam",
-    label: "GitHub",
-  },
-  {
-    icon: faNewspaper,
-    href: null,
-    label: "Substack (coming soon)",
-  },
-  {
-    icon: faEnvelope,
-    href: "mailto:me@arnolfokam.com",
-    label: "Email",
-  },
-];
+const SubstackIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+    <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+  </svg>
+);
 
+type Social = {
+  label: string;
+  href: string | null;
+} & ({ icon: IconDefinition; customIcon?: never } | { customIcon: React.ReactNode; icon?: never });
+
+const socials: Social[] = [
+  { icon: faLinkedinIn,    href: "https://www.linkedin.com/in/arnolfokam/",                          label: "LinkedIn"              },
+  { icon: faGoogleScholar, href: "https://scholar.google.com/citations?user=cA1hu0UAAAAJ&hl=en",    label: "Google Scholar"        },
+  { icon: faGithub,        href: "https://github.com/ArnolFokam",                                   label: "GitHub"                },
+  { customIcon: <SubstackIcon />, href: null,                                                        label: "Substack (coming soon)"},
+  { icon: faEnvelope,      href: "mailto:me@arnolfokam.me",                                         label: "Email"                 },
+];
 
 export default function Home() {
   return (
@@ -61,9 +52,9 @@ export default function Home() {
 
         {/* Social icons */}
         <div className="mt-8 flex flex-row gap-4">
-          {socials.map(({ icon, href, label }) => {
-            const shared =
-              "group relative flex h-12 w-12 items-center justify-center rounded-xl";
+          {socials.map(({ icon, customIcon, href, label }) => {
+            const shared = "group relative flex h-12 w-12 items-center justify-center rounded-xl";
+            const glyph = customIcon ?? <FontAwesomeIcon icon={icon!} className="h-5 w-5" />;
             const tooltip = (
               <span className="pointer-events-none absolute bottom-14 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-zinc-700 px-3 py-1.5 text-xs text-zinc-100 opacity-0 transition-opacity group-hover:opacity-100">
                 {label}
@@ -78,7 +69,7 @@ export default function Home() {
                 aria-label={label}
                 className={`${shared} bg-zinc-800 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white`}
               >
-                <FontAwesomeIcon icon={icon} className="h-5 w-5" />
+                {glyph}
                 {tooltip}
               </a>
             ) : (
@@ -87,7 +78,7 @@ export default function Home() {
                 aria-label={label}
                 className={`${shared} cursor-not-allowed bg-zinc-800 text-zinc-600`}
               >
-                <FontAwesomeIcon icon={icon} className="h-5 w-5" />
+                {glyph}
                 {tooltip}
               </span>
             );
