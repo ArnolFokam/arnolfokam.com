@@ -26,6 +26,17 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0);    }
-  50%       { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0);     }
+  50%       { transform: translateY(-18px); }
+}
+
+@keyframes float-wide {
+  0%, 100% { transform: translateY(0)     translateX(0);    }
+  25%       { transform: translateY(-20px) translateX(8px);  }
+  75%       { transform: translateY(-8px)  translateX(-10px); }
+}
+
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1)    rotate(var(--r, 0deg)); opacity: 0.40; }
+  50%       { transform: scale(1.25) rotate(var(--r, 0deg)); opacity: 0.90; }
 }
