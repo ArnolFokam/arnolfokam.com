@@ -43,7 +43,7 @@ export default function Home() {
 
       {/* Text — left half */}
       <div className="absolute inset-y-0 left-0 flex w-1/2 flex-col justify-center px-20">
-        <p className="text-lg font-semibold uppercase tracking-widest text-zinc-400">
+        <p className="text-2xl font-semibold uppercase tracking-widest text-zinc-400">
           Hello, I&apos;m
         </p>
         <h1
