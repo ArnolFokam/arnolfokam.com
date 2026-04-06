@@ -25,7 +25,7 @@ const socials: Social[] = [
   { icon: faGoogleScholar, href: "https://scholar.google.com/citations?user=cA1hu0UAAAAJ&hl=en",    label: "Google Scholar"        },
   { icon: faGithub,        href: "https://github.com/ArnolFokam",                                   label: "GitHub"                },
   { customIcon: <SubstackIcon />, href: null,                                                        label: "Substack (coming soon)"},
-  { icon: faEnvelope,      href: "mailto:me@arnolfokam.me",                                         label: "Email"                 },
+  { icon: faEnvelope,      href: "mailto:me@arnolfokam.com",                                         label: "Email"                 },
 ];
 
 export default function Home() {
