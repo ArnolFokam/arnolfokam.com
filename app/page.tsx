@@ -106,7 +106,7 @@ export default function Home() {
         className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-5 lg:px-20 lg:py-8"
         style={anim("fadeInDown", 0, 0.6)}
       >
-        <Image src="/logo/logo.png" alt="Arnol Fokam" width={72} height={72} loading="eager" className="rounded-lg" />
+        <Image src="/logo/logo.png" alt="Arnol Fokam" width={120} height={120} loading="eager" className="rounded-xl" />
       </nav>
 
       {/* Text — full on mobile, left half on desktop */}
