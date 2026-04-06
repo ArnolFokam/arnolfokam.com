@@ -96,7 +96,7 @@ export default function Home() {
             height: "88vh",
             width: "auto",
             filter:
-              "drop-shadow(0 0 80px rgba(255,255,255,0.1)) drop-shadow(0 0 200px rgba(255,255,255,0.05))",
+              "drop-shadow(0 0 80px rgba(255,255,255,0.06)) drop-shadow(0 0 200px rgba(255,255,255,0.03))",
           }}
         />
       </div>
