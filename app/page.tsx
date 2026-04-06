@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AnnouncementBanner from "./components/AnnouncementBanner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedinIn,
@@ -24,7 +25,7 @@ const socials: Social[] = [
   { icon: faLinkedinIn,         href: "https://www.linkedin.com/in/arnolfokam/",                       label: "LinkedIn"               },
   { icon: faGoogleScholar,      href: "https://scholar.google.com/citations?user=cA1hu0UAAAAJ&hl=en", label: "Google Scholar"         },
   { icon: faGithub,             href: "https://github.com/ArnolFokam",                                label: "GitHub"                 },
-  { customIcon: <SubstackIcon />, href: null,                                                          label: "Substack (coming soon)" },
+  { customIcon: <SubstackIcon />, href: "https://thebuilderdiarybyarnol.substack.com/welcome",         label: "Substack"               },
   { icon: faEnvelope,           href: "mailto:me@arnolfokam.com",                                     label: "Email"                  },
 ];
 
@@ -33,6 +34,8 @@ const anim = (name: string, delay: number, duration = 0.7) =>
 
 export default function Home() {
   return (
+    <>
+    <AnnouncementBanner />
     <main className="relative min-h-screen w-full overflow-x-hidden bg-zinc-950 lg:h-screen lg:overflow-hidden">
 
       {/* Background image — desktop only */}
@@ -103,7 +106,7 @@ export default function Home() {
 
       {/* Navbar */}
       <nav
-        className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-5 lg:px-20 lg:py-8"
+        className="absolute inset-x-0 top-9 z-20 flex items-center justify-between px-6 py-5 lg:px-20 lg:py-8"
         style={anim("fadeInDown", 0, 0.6)}
       >
         <Image src="/logo/logo.png" alt="Arnol Fokam" width={120} height={120} loading="eager" className="rounded-xl" />
@@ -231,5 +234,6 @@ export default function Home() {
       </div>
 
     </main>
+    </>
   );
 }
