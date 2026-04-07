@@ -37,6 +37,8 @@ export default function Home() {
     <>
     <AnnouncementBanner />
     <main className="relative min-h-screen w-full overflow-x-hidden bg-zinc-950 lg:h-screen lg:overflow-hidden">
+      {/* Subtle layered mobile background */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_48%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_52%)] lg:hidden" />
 
       {/* Background image — desktop only */}
       <Image
@@ -106,14 +108,14 @@ export default function Home() {
 
       {/* Navbar */}
       <nav
-        className="absolute inset-x-0 top-9 z-20 flex items-center justify-between px-6 py-5 lg:px-20 lg:py-8"
+        className="absolute inset-x-0 top-12 z-20 flex items-center justify-end px-6 py-5 sm:top-10 lg:top-9 lg:justify-start lg:px-20 lg:py-8"
         style={anim("fadeInDown", 0, 0.6)}
       >
         <Image src="/logo/logo.png" alt="Arnol Fokam" width={120} height={120} loading="eager" className="rounded-xl" />
       </nav>
 
       {/* Text — full on mobile, left half on desktop */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-center overflow-y-auto px-8 pt-28 pb-12 lg:inset-y-0 lg:left-0 lg:w-1/2 lg:overflow-visible lg:px-20 lg:pb-0 lg:pt-0">
+      <div className="absolute inset-0 z-10 flex flex-col justify-center overflow-y-auto px-6 pb-12 pt-34 sm:px-8 sm:pt-32 lg:inset-y-0 lg:left-0 lg:w-1/2 lg:overflow-visible lg:px-20 lg:pb-0 lg:pt-0">
         <p
           className="text-base font-semibold uppercase tracking-widest text-zinc-400 lg:text-xl"
           style={anim("fadeInUp", 150)}
@@ -122,7 +124,7 @@ export default function Home() {
         </p>
         <h1
           className="mt-3 font-bold leading-[1.05] text-white"
-          style={{ ...anim("fadeInUp", 300), fontSize: "clamp(3rem, 10vw, 7rem)" }}
+          style={{ ...anim("fadeInUp", 300), fontSize: "clamp(2.4rem, 12vw, 7rem)" }}
         >
           Arnol Fokam
         </h1>
@@ -190,25 +192,6 @@ export default function Home() {
 
         {/* Ground glow blob */}
         <div className="pointer-events-none absolute bottom-0 left-1/2 h-14 w-[360px] -translate-x-1/2 rounded-full bg-white/15 blur-2xl" />
-
-        {/* Inner ellipse ring — positioned around upper body/head */}
-        <div className="pointer-events-none absolute bottom-[62%] left-1/2 h-10 w-[300px] -translate-x-1/2 rounded-full border-2 border-white/30" />
-
-        {/* Middle rotating dashed ellipse */}
-        <div className="pointer-events-none absolute bottom-[60%] left-1/2 -translate-x-1/2">
-          <div
-            className="h-14 w-[440px] rounded-full border-2 border-dashed border-white/20"
-            style={{ animation: "spin-slow 22s linear infinite" }}
-          />
-        </div>
-
-        {/* Outer slow counter-rotating ellipse */}
-        <div className="pointer-events-none absolute bottom-[58%] left-1/2 -translate-x-1/2">
-          <div
-            className="h-16 w-[580px] rounded-full border border-white/12"
-            style={{ animation: "spin-slow-reverse 35s linear infinite" }}
-          />
-        </div>
 
         {/* Floating accent dots */}
         <div className="pointer-events-none absolute bottom-[30%] left-[8%]  h-3   w-3   rounded-full bg-white/35" style={{ animation: "float 4s ease-in-out infinite" }} />
