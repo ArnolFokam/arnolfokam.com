@@ -52,67 +52,6 @@ export default function Home() {
       {/* Dark overlay — desktop only */}
       <div className="absolute inset-0 z-0 hidden bg-black/85 lg:block" />
 
-      {/* ── Geometric decorations — around the portrait ── */}
-      <div className="pointer-events-none absolute inset-0 z-[5] hidden lg:block">
-
-        {/* ── TOP ── */}
-        {/* large triangle, float-wide */}
-        <svg style={{ position:"absolute", top:"3%", left:"63%", width:110, height:110, opacity:0.75, animation:"float-wide 5s ease-in-out infinite" }} viewBox="0 0 44 44">
-          <polygon points="22,3 41,41 3,41" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3.5"/>
-        </svg>
-        {/* medium inverted triangle, spin + float */}
-        <svg style={{ position:"absolute", top:"2%", left:"80%", width:56, height:56, opacity:0.65, animation:"spin-slow-reverse 20s linear infinite, float 3.5s ease-in-out 0.5s infinite" }} viewBox="0 0 30 30">
-          <polygon points="15,28 2,2 28,2" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="3"/>
-        </svg>
-        {/* small diamond, fast float */}
-        <div style={{ position:"absolute", top:"4%", left:"91%", width:34, height:34, border:"3px solid rgba(255,255,255,0.60)", transform:"rotate(45deg)", animation:"float 2.8s ease-in-out infinite" }} />
-
-        {/* ── LEFT EDGE ── */}
-        {/* big diamond, pulse-scale */}
-        <div style={{ position:"absolute", top:"18%", left:"51%", width:72, height:72, border:"3.5px solid rgba(255,255,255,0.55)", transform:"rotate(45deg)", animation:"pulse-scale 3.5s ease-in-out infinite" }} />
-        {/* medium triangle, float-wide */}
-        <svg style={{ position:"absolute", top:"40%", left:"50%", width:64, height:64, opacity:0.70, animation:"float-wide 4.5s ease-in-out 1s infinite" }} viewBox="0 0 30 30">
-          <polygon points="15,28 2,2 28,2" fill="none" stroke="rgba(255,255,255,0.75)" strokeWidth="3.5"/>
-        </svg>
-        {/* small square, fast spin + float */}
-        <div style={{ position:"absolute", top:"62%", left:"52%", width:28, height:28, border:"3px solid rgba(255,255,255,0.65)", transform:"rotate(20deg)", animation:"spin-slow 15s linear infinite, float 3s ease-in-out 0.4s infinite" }} />
-        {/* tiny diamond, fast float */}
-        <div style={{ position:"absolute", top:"74%", left:"53%", width:18, height:18, border:"2.5px solid rgba(255,255,255,0.55)", transform:"rotate(45deg)", animation:"float 2.5s ease-in-out 0.6s infinite" }} />
-
-        {/* ── RIGHT EDGE ── */}
-        {/* large square, float-wide */}
-        <div style={{ position:"absolute", top:"14%", left:"93%", width:80, height:80, border:"3.5px solid rgba(255,255,255,0.50)", transform:"rotate(20deg)", animation:"float-wide 6s ease-in-out 0.8s infinite" }} />
-        {/* medium triangle, float */}
-        <svg style={{ position:"absolute", top:"38%", left:"92%", width:52, height:52, opacity:0.75, animation:"float 3.5s ease-in-out 0.8s infinite" }} viewBox="0 0 22 22">
-          <polygon points="11,2 20,20 2,20" fill="none" stroke="rgba(255,255,255,0.85)" strokeWidth="3"/>
-        </svg>
-        {/* medium diamond, pulse-scale fast */}
-        <div style={{ position:"absolute", top:"60%", left:"91%", width:44, height:44, border:"3px solid rgba(255,255,255,0.60)", transform:"rotate(45deg)", animation:"pulse-scale 4s ease-in-out 1s infinite" }} />
-        {/* small triangle, spin + float */}
-        <svg style={{ position:"absolute", top:"76%", left:"93%", width:30, height:30, opacity:0.65, animation:"spin-slow 18s linear infinite, float 3s ease-in-out 1.2s infinite" }} viewBox="0 0 22 22">
-          <polygon points="11,2 20,20 2,20" fill="none" stroke="rgba(255,255,255,0.70)" strokeWidth="3"/>
-        </svg>
-
-        {/* ── BOTTOM ── */}
-        {/* large inverted triangle, float-wide */}
-        <svg style={{ position:"absolute", top:"80%", left:"56%", width:80, height:80, opacity:0.70, animation:"float-wide 5s ease-in-out 1.5s infinite" }} viewBox="0 0 34 34">
-          <polygon points="17,3 31,31 3,31" fill="none" stroke="rgba(255,255,255,0.80)" strokeWidth="3.5"/>
-        </svg>
-        {/* large diamond, pulse-scale */}
-        <div style={{ position:"absolute", top:"82%", left:"74%", width:64, height:64, border:"3px solid rgba(255,255,255,0.55)", transform:"rotate(45deg)", animation:"pulse-scale 4.5s ease-in-out 0.5s infinite" }} />
-        {/* small triangle, float */}
-        <svg style={{ position:"absolute", top:"84%", left:"88%", width:36, height:36, opacity:0.65, animation:"float 3s ease-in-out 0.3s infinite" }} viewBox="0 0 22 22">
-          <polygon points="11,2 20,20 2,20" fill="none" stroke="rgba(255,255,255,0.70)" strokeWidth="3"/>
-        </svg>
-      </div>
-
-      {/* Navbar */}
-      <nav
-        className="absolute inset-x-0 top-12 z-20 flex items-center justify-end px-6 py-5 sm:top-10 lg:top-9 lg:justify-start lg:px-20 lg:py-8"
-        style={anim("fadeInDown", 0, 0.6)}
-      >
-        <Image src="/logo/logo.png" alt="Arnol Fokam" width={120} height={120} loading="eager" className="rounded-xl" />
-      </nav>
 
       {/* Text — full on mobile, left half on desktop */}
       <div className="absolute inset-0 z-10 flex flex-col justify-center overflow-y-auto px-6 pb-12 pt-34 sm:px-8 sm:pt-32 lg:inset-y-0 lg:left-0 lg:w-1/2 lg:overflow-visible lg:px-20 lg:pb-0 lg:pt-0">
@@ -140,6 +79,20 @@ export default function Home() {
         >
           I write code, train models, and ship things. I break systems on purpose to understand them, then rebuild them better. On a mission to bring a distinctly African identity into global tech, not just as users but as the people shaping it.
         </p>
+        <div
+          className="mt-6 rounded-2xl border border-white/15 bg-white/5 p-4 text-sm leading-7 text-zinc-300 lg:p-5 lg:text-base"
+          style={anim("fadeInUp", 680)}
+        >
+          I&apos;m launching a new platform for professionals and students to move from AI theory to real project practice. It combines roadmap guidance, paper-reading skills, and hands-on building.
+          <a
+            href="https://growinai.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
+          >
+            Explore growinai.co.uk
+          </a>
+        </div>
 
         {/* Social icons */}
         <div className="mt-8 flex flex-col gap-3 lg:flex-row lg:gap-4" style={anim("fadeInUp", 750)}>
@@ -180,26 +133,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Right half — decorations + image (hidden on mobile) */}
+      {/* Right half — image (hidden on mobile) */}
       <div
         className="absolute inset-y-0 right-0 z-10 hidden w-1/2 lg:block"
         style={anim("fadeIn", 400, 1.2)}
       >
-        {/* ── Decorations (all before image = behind person) ── */}
-
-        {/* Upward light beam */}
-        <div className="pointer-events-none absolute bottom-0 left-1/2 h-[70%] w-56 -translate-x-1/2 bg-gradient-to-t from-white/7 via-white/[0.03] to-transparent" />
-
-        {/* Ground glow blob */}
-        <div className="pointer-events-none absolute bottom-0 left-1/2 h-14 w-[360px] -translate-x-1/2 rounded-full bg-white/15 blur-2xl" />
-
-        {/* Floating accent dots */}
-        <div className="pointer-events-none absolute bottom-[30%] left-[8%]  h-3   w-3   rounded-full bg-white/35" style={{ animation: "float 4s ease-in-out infinite" }} />
-        <div className="pointer-events-none absolute bottom-[22%] right-[7%]  h-2.5 w-2.5 rounded-full bg-white/30" style={{ animation: "float 5s ease-in-out 0.8s infinite" }} />
-        <div className="pointer-events-none absolute bottom-[42%] left-[22%] h-2   w-2   rounded-full bg-white/22" style={{ animation: "float 6s ease-in-out 1.5s infinite" }} />
-        <div className="pointer-events-none absolute bottom-[15%] right-[20%] h-3   w-3   rounded-full bg-white/28" style={{ animation: "float 4.5s ease-in-out 0.4s infinite" }} />
-        <div className="pointer-events-none absolute bottom-[52%] right-[12%] h-1.5 w-1.5 rounded-full bg-white/20" style={{ animation: "float 5.5s ease-in-out 1s infinite" }} />
-
         {/* Person image */}
         <div className="absolute bottom-0 left-0 right-0 flex justify-center">
           <Image
