@@ -1,25 +1,35 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Instrument_Serif, Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const workSans = Work_Sans({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-work-sans",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-instrument-serif",
 });
 
 const siteUrl = "https://arnolfokam.com";
 const description =
-  "I write code, train models, and ship things. On a mission to bring a distinctly African identity into global tech.";
+  "Arnol Fokam is a Research Engineer working on reinforcement learning, large language models, and AI systems.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Arnol Fokam — AI Builder",
+  title: {
+    default: "Arnol Fokam - Research Engineer",
+    template: "%s - Arnol Fokam",
+  },
   description,
   keywords: [
     "Arnol Fokam",
-    "AI Builder",
-    "Machine Learning Engineer",
     "Research Engineer",
+    "Machine Learning Engineer",
     "African in Tech",
     "London",
   ],
@@ -34,23 +44,14 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Arnol Fokam",
-    title: "Arnol Fokam — AI Builder",
+    title: "Arnol Fokam - Research Engineer",
     description,
     locale: "en_GB",
-    images: [
-      {
-        url: "/working.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Arnol Fokam at work",
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Arnol Fokam — AI Builder",
+    card: "summary",
+    title: "Arnol Fokam - Research Engineer",
     description,
-    images: ["/working.jpg"],
   },
   icons: {
     icon: [
@@ -68,7 +69,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Arnol Fokam",
   url: siteUrl,
-  jobTitle: "AI Builder",
+  jobTitle: "Research Engineer",
   description,
   sameAs: [
     "https://www.linkedin.com/in/arnolfokam/",
@@ -84,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={spaceGrotesk.className}>
+    <html lang="en" className={`${workSans.variable} ${instrumentSerif.variable}`}>
       <body>
         {children}
         <script
