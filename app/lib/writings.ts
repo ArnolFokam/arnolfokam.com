@@ -17,6 +17,10 @@ export type PostWithContent = Post & {
 };
 
 function getPostSlugs() {
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
+
   return fs
     .readdirSync(postsDirectory)
     .filter((fileName) => fileName.endsWith(".md"))
