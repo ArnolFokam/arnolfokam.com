@@ -25,7 +25,7 @@ export default function PostsPage() {
         <ul className="divide-y divide-border">
           {posts.map((post) => (
             <li key={post.slug} className="group py-6">
-              <Link href={`/writings/${post.slug}`} className="block">
+              <Link href={`/posts/${post.slug}`} className="block">
                 <div className="flex items-baseline justify-between gap-6">
                   <h2 className="font-serif text-2xl leading-snug transition-colors group-hover:text-primary md:text-3xl">
                     {post.title}
@@ -51,10 +51,10 @@ export default function PostsPage() {
       <p className="mt-10 text-sm text-muted-foreground">
         More writing lives at{" "}
         <a
-          href="https://thebuilderdiarybyarnol.substack.com/welcome"
+          href="https://chocolatecookiebytes.substack.com/"
           className="text-foreground underline underline-offset-4 hover:text-primary"
         >
-          The Builder&apos;s Diary
+          Chocolate Cookie Bytes
         </a>
         .
       </p>

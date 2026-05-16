@@ -14,8 +14,8 @@ const socialLinks = [
     label: "Scholar",
   },
   {
-    href: "https://thebuilderdiarybyarnol.substack.com/welcome",
-    label: "Substack",
+    href: "https://chocolatecookiebytes.substack.com/",
+    label: "Chocolate Cookie Bytes",
   },
 ] as const;
 

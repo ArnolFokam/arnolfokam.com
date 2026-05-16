@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { SiteLayout } from "../../components/SiteLayout";
 import { formatDate, getPost, getPosts } from "../../lib/writings";
 
-type WritingPageProps = {
+type PostPageProps = {
   params: Promise<{ slug: string }>;
 };
 
@@ -11,7 +11,7 @@ export function generateStaticParams() {
   return getPosts().map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({ params }: WritingPageProps) {
+export async function generateMetadata({ params }: PostPageProps) {
   const { slug } = await params;
   const post = getPost(slug);
 
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: WritingPageProps) {
   };
 }
 
-export default async function WritingPage({ params }: WritingPageProps) {
+export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
   const post = getPost(slug);
 
