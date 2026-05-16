@@ -21,13 +21,6 @@ export default function Home() {
           >
             me@arnolfokam.com
           </a>
-          <span aria-hidden="true">/</span>
-          <a
-            href="https://calendar.app.google/eobyAWrm8sA1sLJR6"
-            className="underline-offset-4 hover:text-foreground hover:underline"
-          >
-            Book a chat
-          </a>
         </div>
       </header>
 
@@ -83,6 +76,17 @@ export default function Home() {
           <Link href="/resume" className={inlineLink}>
             resume
           </Link>
+          .
+        </p>
+        <p className="text-muted-foreground">
+          I&apos;m always happy to meet new people and talk about interesting
+          stuff, so feel free to{" "}
+          <a
+            href="https://calendar.app.google/eobyAWrm8sA1sLJR6"
+            className={inlineLink}
+          >
+            find a time to talk
+          </a>
           .
         </p>
       </section>
