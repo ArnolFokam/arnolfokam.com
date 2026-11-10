@@ -110,6 +110,20 @@
     list-style-type: decimal;
   }
 
+  .markdown-content blockquote {
+    border-left: 2px solid var(--color-primary);
+    padding-left: 1.25rem;
+    font-style: italic;
+  }
+
+  .markdown-content blockquote > * + * {
+    margin-top: 1rem;
+  }
+
+  .markdown-content hr {
+    border-color: var(--color-border);
+  }
+
   .markdown-content code {
     border-radius: 0.25rem;
     background-color: var(--color-muted);
