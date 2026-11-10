@@ -16,6 +16,7 @@
   --color-border: var(--border);
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
   --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-reading: var(--font-newsreader), ui-serif, Georgia, serif;
 }
 
 :root {
@@ -78,7 +79,7 @@
 
 @layer components {
   .markdown-content {
-    font-family: var(--font-serif);
+    font-family: var(--font-reading);
     font-size: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
     line-height: 1.75;
   }

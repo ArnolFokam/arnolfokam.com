@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Work_Sans } from "next/font/google";
+import { Instrument_Serif, Newsreader, Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const workSans = Work_Sans({
@@ -13,6 +13,16 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
   display: "swap",
   variable: "--font-instrument-serif",
+});
+
+// Body text of posts: a text serif with real italics and bold. Instrument Serif is a display face
+// (one weight, made for headings), so long paragraphs, bold and italics in it look off.
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  display: "swap",
+  variable: "--font-newsreader",
 });
 
 const siteUrl = "https://arnolfokam.com";
@@ -85,7 +95,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${workSans.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={`${workSans.variable} ${instrumentSerif.variable} ${newsreader.variable}`}>
       <body>
         {children}
         <script
